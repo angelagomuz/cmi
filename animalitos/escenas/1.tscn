@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1txvppu1ggxb"]
+
+[ext_resource type="Texture2D" uid="uid://74r2m1373sg1" path="res://png/Local_noche.png" id="1_lsojn"]
+[ext_resource type="AudioStream" uid="uid://dmhpugi8whwlw" path="res://sonido/malathion-85943.mp3" id="2_fy7dh"]
+[ext_resource type="Script" uid="uid://c6vjnwb1txkt0" path="res://escenas/audio_stream_player.gd" id="3_fy7dh"]
+[ext_resource type="Texture2D" uid="uid://ch5qu3ne2yvgd" path="res://png/A_partir_de_la_selección.png" id="4_fy7dh"]
+[ext_resource type="Script" uid="uid://dxo7crb78xiw5" path="res://escenas/botonclosed.gd" id="5_ryvi0"]
+
+[node name="Node2D" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [610.0]
+metadata/_edit_vertical_guides_ = [814.0]
+
+[node name="LocalNoche" type="Sprite2D" parent="."]
+position = Vector2(574.84, 324.505)
+scale = Vector2(1.4379, 1.07832)
+texture = ExtResource("1_lsojn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fy7dh")
+volume_db = -34.828
+script = ExtResource("3_fy7dh")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 180.0
+offset_top = 53.0
+offset_right = 1084.0
+offset_bottom = 735.0
+scale = Vector2(1.01395, 0.929996)
+texture_normal = ExtResource("4_fy7dh")
+script = ExtResource("5_ryvi0")

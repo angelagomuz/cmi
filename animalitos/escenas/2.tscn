@@ -1,0 +1,231 @@
+[gd_scene load_steps=15 format=3 uid="uid://rashtmv6hi1p"]
+
+[ext_resource type="Texture2D" uid="uid://bgylvdo538ufl" path="res://png/Local_Dia.png" id="1_51blj"]
+[ext_resource type="Script" uid="uid://bb8lnccrgxtct" path="res://escenas/2.gd" id="1_n73es"]
+[ext_resource type="Texture2D" uid="uid://b0rh544csjvd5" path="res://png/Base_Menu1.png" id="2_olmw0"]
+[ext_resource type="Texture2D" uid="uid://daokus8h3xxyn" path="res://png/Base_Menu2.png" id="3_n73es"]
+[ext_resource type="Texture2D" uid="uid://dbciatifflews" path="res://png/Base_Menu_vacio.png" id="5_n73es"]
+[ext_resource type="Texture2D" uid="uid://dmngejf08pnxq" path="res://png/Capa_7.png" id="6_8gaxe"]
+[ext_resource type="Texture2D" uid="uid://dfbfd04uefkxa" path="res://png/Capa_9.png" id="7_sw0k4"]
+[ext_resource type="Texture2D" uid="uid://dag58nj0syvrf" path="res://png/Capa_4.png" id="8_4hffl"]
+[ext_resource type="Texture2D" uid="uid://cfbasg2bx44jv" path="res://png/Capa_4 1.png" id="9_v7cgn"]
+[ext_resource type="Texture2D" uid="uid://chn7j3gf0mhk7" path="res://png/Capa_4 2.png" id="10_axn7y"]
+[ext_resource type="AudioStream" uid="uid://dmhpugi8whwlw" path="res://sonido/malathion-85943.mp3" id="11_v7cgn"]
+
+[sub_resource type="Animation" id="Animation_57tr3"]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/LocalDia:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/BaseMenu1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 1.13333, 2.13333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/BaseMenu2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.0333333, 2.23333, 3.33333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/BaseMenuVacio:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-0.0333333, 3.36667, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Capa7:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.36667, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-292, 299), Vector2(579.625, 323.625)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Capa9:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.36667, 4.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(390, 678), Vector2(581, 324)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Capa4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.36667, 4.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1875, 316), Vector2(574, 325)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/Capa41:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3.23333, 4.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1969, 361), Vector2(584, 323)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/Capa42:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(3.26667, 4.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2012, 360), Vector2(583, 314)]
+}
+
+[sub_resource type="Animation" id="Animation_sw0k4"]
+resource_name = "teaser"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/LocalDia:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 2.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/BaseMenu1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/BaseMenu2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3, 3.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_51hiq"]
+_data = {
+&"RESET": SubResource("Animation_57tr3"),
+&"teaser": SubResource("Animation_sw0k4")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_n73es")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_51hiq")
+}
+
+[node name="LocalDia" type="Sprite2D" parent="AnimationPlayer"]
+position = Vector2(576.5, 322.5)
+scale = Vector2(1.44125, 1.075)
+texture = ExtResource("1_51blj")
+
+[node name="BaseMenu1" type="Sprite2D" parent="AnimationPlayer"]
+visible = false
+position = Vector2(576.5, 323.5)
+scale = Vector2(1.43875, 1.07167)
+texture = ExtResource("2_olmw0")
+
+[node name="BaseMenu2" type="Sprite2D" parent="AnimationPlayer"]
+visible = false
+position = Vector2(577.5, 324.5)
+scale = Vector2(1.43875, 1.075)
+texture = ExtResource("3_n73es")
+
+[node name="BaseMenuVacio" type="Sprite2D" parent="AnimationPlayer"]
+visible = false
+position = Vector2(576, 322.5)
+scale = Vector2(1.44, 1.075)
+texture = ExtResource("5_n73es")
+
+[node name="Capa7" type="Sprite2D" parent="AnimationPlayer"]
+position = Vector2(-292, 299)
+scale = Vector2(1.44594, 1.07125)
+texture = ExtResource("6_8gaxe")
+
+[node name="Capa9" type="Sprite2D" parent="AnimationPlayer"]
+position = Vector2(390, 678)
+scale = Vector2(1.4425, 1.06167)
+texture = ExtResource("7_sw0k4")
+
+[node name="Capa4" type="Sprite2D" parent="AnimationPlayer"]
+position = Vector2(1875, 316)
+scale = Vector2(1.43125, 1.09)
+texture = ExtResource("8_4hffl")
+
+[node name="Capa41" type="Sprite2D" parent="AnimationPlayer"]
+position = Vector2(1969, 361)
+scale = Vector2(1.43375, 1.07667)
+texture = ExtResource("9_v7cgn")
+
+[node name="Capa42" type="Sprite2D" parent="AnimationPlayer"]
+position = Vector2(2012, 360)
+scale = Vector2(1.42875, 1.105)
+texture = ExtResource("10_axn7y")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_v7cgn")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

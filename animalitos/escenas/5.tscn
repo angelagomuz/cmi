@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://c52cmv6lmqk8j"]
+
+[ext_resource type="Script" uid="uid://0gq0mdnqyst6" path="res://escenas/botonngaleria.gd" id="1_4fohg"]
+[ext_resource type="Texture2D" uid="uid://s62plbdegqab" path="res://png/Base_Menu_Def.png" id="1_vwgav"]
+[ext_resource type="Texture2D" uid="uid://bfw6qioom481a" path="res://png/mute.png" id="4_8ilwk"]
+[ext_resource type="AudioStream" uid="uid://bk6ojl1c4qg3r" path="res://sonido/click_ui.wav" id="4_bqsrt"]
+[ext_resource type="AudioStream" uid="uid://ci13nryfuenyh" path="res://sonido/malathiondeff.mp3" id="4_r8ejf"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4fohg")
+
+[node name="BaseMenuDef" type="Sprite2D" parent="."]
+position = Vector2(576.5, 324.5)
+scale = Vector2(1.43875, 1.08167)
+texture = ExtResource("1_vwgav")
+
+[node name="boton_play" type="TextureButton" parent="BaseMenuDef"]
+offset_left = 62.0
+offset_top = -7.0
+offset_right = 89.0
+offset_bottom = 32.0
+scale = Vector2(9.88709, 3.99499)
+
+[node name="boton_galeria" type="TextureButton" parent="BaseMenuDef"]
+offset_left = 199.826
+offset_top = 175.192
+offset_right = 388.826
+offset_bottom = 292.192
+
+[node name="boton_creditos" type="TextureButton" parent="BaseMenuDef"]
+offset_left = 5.90796
+offset_top = 177.966
+offset_right = 184.908
+offset_bottom = 296.966
+
+[node name="boton_sonido" type="TextureButton" parent="BaseMenuDef"]
+offset_left = 273.501
+offset_top = -291.679
+offset_right = 785.501
+offset_bottom = 220.321
+scale = Vector2(0.236424, 0.220521)
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_8ilwk")
+
+[node name="clickboton" type="AudioStreamPlayer" parent="BaseMenuDef"]
+stream = ExtResource("4_bqsrt")
+volume_db = 24.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_r8ejf")
+volume_db = 0.024
+autoplay = true
