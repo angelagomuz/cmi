@@ -1,0 +1,215 @@
+[gd_scene load_steps=17 format=3 uid="uid://v1fsgq85wrby"]
+
+[ext_resource type="Script" uid="uid://c0r5t4qe8x6cp" path="res://NIVEL1.gd" id="1_hisfq"]
+[ext_resource type="Texture2D" uid="uid://r5yens8essu3" path="res://png/Fondo_N1.jpg" id="2_m2smp"]
+[ext_resource type="AudioStream" uid="uid://3sjc0jccaeqc" path="res://sonido/musicanivel.mp3" id="3_b28ef"]
+[ext_resource type="Texture2D" uid="uid://bc6e4847atjli" path="res://png/Per._Cuerpo_G.png" id="3_pc3ge"]
+[ext_resource type="Texture2D" uid="uid://cpgv428elrw6s" path="res://png/100x100.png" id="4_b28ef"]
+[ext_resource type="Texture2D" uid="uid://b0pr3de7sa2pf" path="res://png/gatotriste.png" id="4_sywif"]
+[ext_resource type="Texture2D" uid="uid://cvxrq4gcyickr" path="res://png/d3c2fca6984a39790345621450419fb0.png" id="5_40cmq"]
+[ext_resource type="FontFile" uid="uid://ey3cboyli4fi" path="res://png/Jersey10-Regular.ttf" id="5_sywif"]
+[ext_resource type="Texture2D" uid="uid://7xl4d2hjl2uh" path="res://png/player.png" id="6_40cmq"]
+[ext_resource type="AudioStream" uid="uid://bk6ojl1c4qg3r" path="res://sonido/click_ui.wav" id="7_43ksl"]
+[ext_resource type="StyleBox" uid="uid://b077e318qt77t" path="res://estiloboton.tres" id="7_m2smp"]
+[ext_resource type="AudioStream" uid="uid://b2uj7etv2iax6" path="res://sonido/correct-choice-43861.mp3" id="8_fu5hw"]
+[ext_resource type="AudioStream" uid="uid://bplo245yolb7m" path="res://sonido/wrong-answer-21-199825.mp3" id="9_bayg3"]
+
+[sub_resource type="Animation" id="Animation_43ksl"]
+resource_name = "Lagrima"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(854, 275), Vector2(854, 275), Vector2(853, 312)]
+}
+
+[sub_resource type="Animation" id="Animation_fu5hw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(854, 275)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bayg3"]
+_data = {
+&"Lagrima": SubResource("Animation_43ksl"),
+&"RESET": SubResource("Animation_fu5hw")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hisfq")
+
+[node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 644.0
+texture = ExtResource("2_m2smp")
+
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_b28ef")
+
+[node name="GatoLlorando" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 662.0
+offset_top = 132.0
+offset_right = 1681.0
+offset_bottom = 879.0
+scale = Vector2(0.417995, 0.441626)
+texture = ExtResource("4_sywif")
+
+[node name="Lágrima" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 275.0
+offset_right = 3042.0
+offset_bottom = 4191.0
+scale = Vector2(0.0108803, 0.00989099)
+texture = ExtResource("5_40cmq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lágrima"]
+libraries = {
+&"": SubResource("AnimationLibrary_bayg3")
+}
+
+[node name="DialogoPrevio" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Personaje" type="Sprite2D" parent="DialogoPrevio"]
+position = Vector2(1055, 423)
+scale = Vector2(-1.03142, 1.04317)
+texture = ExtResource("3_pc3ge")
+
+[node name="CajaTexto" type="TextureRect" parent="DialogoPrevio"]
+modulate = Color(0, 0.341176, 0.909804, 1)
+layout_mode = 0
+offset_left = 592.0
+offset_top = 456.0
+offset_right = 968.0
+offset_bottom = 628.0
+texture = ExtResource("4_b28ef")
+
+[node name="NombreLabel" type="Label" parent="DialogoPrevio/CajaTexto"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 1.0
+offset_right = 715.0
+offset_bottom = 188.0
+scale = Vector2(0.504246, 0.8962)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_sywif")
+theme_override_font_sizes/font_size = 38
+text = "Tenemos una urgencia veterinaria!!
+Para poder conseguir la medicina 
+para curar a este gatito  necesitamos que resuelvas
+ las preguntas de la priemra misión!!"
+
+[node name="TextoDialogo" type="RichTextLabel" parent="DialogoPrevio/CajaTexto"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BotonContinuar" type="TextureButton" parent="DialogoPrevio"]
+layout_mode = 0
+offset_left = 906.0
+offset_top = 464.0
+offset_right = 1418.0
+offset_bottom = 976.0
+scale = Vector2(0.104666, 0.0849894)
+texture_normal = ExtResource("6_40cmq")
+
+[node name="Pregunta" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pregunta" type="Label" parent="Pregunta"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 6.00001
+offset_right = 410.0
+offset_bottom = 117.0
+scale = Vector2(1.29383, 1.45037)
+theme_override_colors/font_color = Color(0.129412, 0.309804, 1, 1)
+theme_override_fonts/font = ExtResource("5_sywif")
+theme_override_font_sizes/font_size = 49
+text = "AQUÍ VA LA PREGUNTA"
+
+[node name="Opciones" type="VBoxContainer" parent="Pregunta"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 239.0
+offset_right = 224.0
+offset_bottom = 328.0
+scale = Vector2(2.06246, 2.51525)
+
+[node name="Opcion1" type="Button" parent="Pregunta/Opciones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_sywif")
+theme_override_styles/normal = ExtResource("7_m2smp")
+text = "OPCIÓN 1"
+
+[node name="Opcion2" type="Button" parent="Pregunta/Opciones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_sywif")
+theme_override_styles/normal = ExtResource("7_m2smp")
+text = "OPCIÓN 2"
+
+[node name="Opcion3" type="Button" parent="Pregunta/Opciones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_sywif")
+theme_override_styles/normal = ExtResource("7_m2smp")
+text = "OPCIÓN 3"
+
+[node name="Resultado" type="Label" parent="Pregunta"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 455.0
+offset_right = 122.0
+offset_bottom = 475.0
+scale = Vector2(2.398, 2.2922)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_sywif")
+theme_override_font_sizes/font_size = 0
+text = "RESULTADO"
+
+[node name="BotonSiguiente" type="TextureButton" parent="Pregunta"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 537.0
+offset_right = 571.0
+offset_bottom = 1049.0
+scale = Vector2(0.207786, 0.117085)
+texture_normal = ExtResource("6_40cmq")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_43ksl")
+
+[node name="CorrectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_fu5hw")
+volume_db = 20.8
+
+[node name="ErrorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_bayg3")

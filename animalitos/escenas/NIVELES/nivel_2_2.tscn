@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://rqls4ssma262"]
+
+[ext_resource type="Texture2D" uid="uid://q2bi3dq3fkwr" path="res://png/Garrapata.png" id="1_f74pg"]
+[ext_resource type="Script" uid="uid://bt6qu315a4eqi" path="res://escenas/NIVELES/nivel_2_2.gd" id="1_hy6vk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy6vk"]
+size = Vector2(117, 150)
+
+[node name="nivel_2_2" type="Area2D"]
+script = ExtResource("1_hy6vk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, 1)
+rotation = -3.1379
+scale = Vector2(0.194167, 0.188333)
+texture = ExtResource("1_f74pg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 8)
+shape = SubResource("RectangleShape2D_hy6vk")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqjbcc8mywlgw"]
+
+[ext_resource type="Script" uid="uid://cll30smil1acu" path="res://escenas/NIVELES/nivel_2_1.gd" id="1_0kg1c"]
+[ext_resource type="Texture2D" uid="uid://14bhahr5kj2i" path="res://png/Pastilla.png" id="1_fllxv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kg1c"]
+size = Vector2(102, 130)
+
+[node name="NIVEL2_1" type="Area2D"]
+script = ExtResource("1_0kg1c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, -3.99999)
+scale = Vector2(0.218333, 0.218333)
+texture = ExtResource("1_fllxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -9)
+shape = SubResource("RectangleShape2D_0kg1c")
+one_way_collision_margin = 0.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

@@ -1,0 +1,240 @@
+[gd_scene load_steps=16 format=3 uid="uid://cllwgnfeciw4h"]
+
+[ext_resource type="Texture2D" uid="uid://b55nhpf6whdli" path="res://png/Granja.png" id="1_ahm34"]
+[ext_resource type="Script" uid="uid://beotnamt8hgrd" path="res://escenas/NIVELES/nivel_3.gd" id="1_fct3p"]
+[ext_resource type="Texture2D" uid="uid://dosv6yjruv886" path="res://png/Msombrero.png" id="2_h47tj"]
+[ext_resource type="Texture2D" uid="uid://cpgv428elrw6s" path="res://png/100x100.png" id="3_fblrh"]
+[ext_resource type="FontFile" uid="uid://ey3cboyli4fi" path="res://png/Jersey10-Regular.ttf" id="4_njj5a"]
+[ext_resource type="Texture2D" uid="uid://7xl4d2hjl2uh" path="res://png/player.png" id="5_toea4"]
+[ext_resource type="Texture2D" uid="uid://tpcojlfv1e1a" path="res://png/Caballo.png" id="6_h47tj"]
+[ext_resource type="Texture2D" uid="uid://d1xdam1s4pyak" path="res://png/corazon.png" id="7_fblrh"]
+[ext_resource type="VideoStream" uid="uid://b1uhcvnpg0pgn" path="res://png/VIDEOFINAL.ogv" id="8_njj5a"]
+[ext_resource type="Texture2D" uid="uid://cfs5kv7dgyreu" path="res://png/rotate.png" id="9_toea4"]
+[ext_resource type="AudioStream" uid="uid://3sjc0jccaeqc" path="res://sonido/musicanivel.mp3" id="11_tjltk"]
+[ext_resource type="AudioStream" uid="uid://csof6muprm211" path="res://sonido/caballo.mp3" id="12_bp4od"]
+[ext_resource type="AudioStream" uid="uid://bplo245yolb7m" path="res://sonido/wrong-answer-21-199825.mp3" id="13_krmcj"]
+[ext_resource type="AudioStream" uid="uid://bk6ojl1c4qg3r" path="res://sonido/click_ui.wav" id="14_q40jn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fblrh"]
+size = Vector2(95.6096, 37.8594)
+
+[node name="NIVEL3" type="Node2D"]
+script = ExtResource("1_fct3p")
+
+[node name="Fondo" type="TextureRect" parent="."]
+offset_right = 1199.0
+offset_bottom = 831.0
+scale = Vector2(0.960274, 0.782408)
+texture = ExtResource("1_ahm34")
+
+[node name="DialogoInicial" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DialogoPrevio" type="Control" parent="DialogoInicial"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Personaje" type="Sprite2D" parent="DialogoInicial/DialogoPrevio"]
+position = Vector2(954, 315)
+scale = Vector2(-1.06759, 1.12036)
+texture = ExtResource("2_h47tj")
+
+[node name="CajaTexto" type="TextureRect" parent="DialogoInicial/DialogoPrevio"]
+modulate = Color(0, 0.341176, 0.909804, 1)
+layout_mode = 0
+offset_left = 373.0
+offset_top = 321.0
+offset_right = 749.0
+offset_bottom = 493.0
+scale = Vector2(1.44751, 1.31363)
+texture = ExtResource("3_fblrh")
+
+[node name="TextoDialogo" type="RichTextLabel" parent="DialogoInicial/DialogoPrevio/CajaTexto"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NombreLabel" type="Label" parent="DialogoInicial/DialogoPrevio/CajaTexto"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 1.0
+offset_right = 715.0
+offset_bottom = 188.0
+scale = Vector2(0.504246, 0.8962)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_njj5a")
+theme_override_font_sizes/font_size = 42
+text = "URGENCIA EN LA GRANJA!!
+Se han escapado 8 caballos, ayudame a cogerlos.
+Están en peligro, un oso conocido como Wini
+ podría herirlos..."
+
+[node name="BotonContinuar" type="TextureButton" parent="DialogoInicial/DialogoPrevio"]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 330.0
+offset_right = 1345.0
+offset_bottom = 842.0
+scale = Vector2(0.104666, 0.0849894)
+texture_normal = ExtResource("5_toea4")
+
+[node name="Caballo" type="Area2D" parent="."]
+position = Vector2(201, -298)
+
+[node name="Sprite2D" type="Sprite2D" parent="Caballo"]
+position = Vector2(234, 404)
+scale = Vector2(0.255742, 0.271852)
+texture = ExtResource("6_h47tj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caballo"]
+position = Vector2(231, 404)
+rotation = 3.14159
+scale = Vector2(1.87902, 4.46504)
+shape = SubResource("RectangleShape2D_fblrh")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelPuntos" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 941.0
+offset_top = 6.0
+offset_right = 1141.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_njj5a")
+theme_override_font_sizes/font_size = 42
+text = " 0/8 CABALLOS"
+
+[node name="VidasContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 553.0
+offset_right = 5910.0
+offset_bottom = 5545.0
+scale = Vector2(0.010731, 0.0120034)
+
+[node name="Vida1" type="TextureRect" parent="UI/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("7_fblrh")
+
+[node name="Vida2" type="TextureRect" parent="UI/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("7_fblrh")
+
+[node name="Vida3" type="TextureRect" parent="UI/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("7_fblrh")
+
+[node name="Vida4" type="TextureRect" parent="UI/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("7_fblrh")
+
+[node name="Vida5" type="TextureRect" parent="UI/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("7_fblrh")
+
+[node name="Victoria" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Victoria"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.781068, 0.59617)
+stream = ExtResource("8_njj5a")
+
+[node name="TextoFin" type="Label" parent="Victoria"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 15.0
+offset_right = 856.0
+offset_bottom = 208.0
+theme_override_fonts/font = ExtResource("4_njj5a")
+theme_override_font_sizes/font_size = 88
+text = "¡MISIÓN CUMPLIDA!
+Hasta la próxima..."
+
+[node name="BotonCreditos" type="TextureButton" parent="Victoria"]
+layout_mode = 0
+offset_left = 998.0
+offset_top = 10.0
+offset_right = 1510.0
+offset_bottom = 522.0
+scale = Vector2(0.272986, 0.199406)
+texture_normal = ExtResource("5_toea4")
+
+[node name="Derrota" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fondo" type="TextureRect" parent="Derrota"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.963229, 0.790861)
+texture = ExtResource("1_ahm34")
+
+[node name="FondoText" type="TextureRect" parent="Derrota"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 257.0
+offset_right = 668.0
+offset_bottom = 357.0
+scale = Vector2(4.93245, 1.46356)
+texture = ExtResource("3_fblrh")
+
+[node name="Label" type="Label" parent="Derrota"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 264.0
+offset_right = 1048.0
+offset_bottom = 409.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_njj5a")
+theme_override_font_sizes/font_size = 65
+text = "Qué lástima...
+Vuelve a intentarlo..."
+
+[node name="Sprite2D" type="Sprite2D" parent="Derrota"]
+position = Vector2(443, 301)
+texture = ExtResource("2_h47tj")
+
+[node name="BotonReintentar" type="TextureButton" parent="Derrota"]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 421.0
+offset_right = 1206.0
+offset_bottom = 933.0
+rotation = 1.5671
+scale = Vector2(0.367071, 0.413772)
+texture_normal = ExtResource("9_toea4")
+
+[node name="MusicaFondo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_tjltk")
+
+[node name="SonidoCaptura" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_bp4od")
+
+[node name="SonidoError" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_krmcj")
+
+[node name="SonidoClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_q40jn")
