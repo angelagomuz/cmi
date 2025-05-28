@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://w7uvly766kn7"]
+
+[ext_resource type="Script" uid="uid://d0urv7fbn241" path="res://creditos.gd" id="1_7flbs"]
+[ext_resource type="Texture2D" uid="uid://d3830b7sw8elc" path="res://escenas/Capa_2.png" id="1_ilafw"]
+[ext_resource type="Texture2D" uid="uid://c4mdqr5jwt8h8" path="res://png/Volverrr.png" id="3_alf7g"]
+[ext_resource type="AudioStream" uid="uid://bk6ojl1c4qg3r" path="res://sonido/click_ui.wav" id="4_3rtis"]
+
+[sub_resource type="Animation" id="Animation_alf7g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Capa2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(578, 972)]
+}
+
+[sub_resource type="Animation" id="Animation_7flbs"]
+resource_name = "creditos"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Capa2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3.03333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(578, 972), Vector2(581, 324), Vector2(581, -329)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}],
+"times": PackedFloat32Array(0, 5)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3rtis"]
+_data = {
+&"RESET": SubResource("Animation_alf7g"),
+&"creditos": SubResource("Animation_7flbs")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7flbs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 1155.0
+offset_bottom = 647.0
+color = Color(0.725756, 0, 0.181978, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3rtis")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 990.0
+offset_top = 548.0
+offset_right = 1790.0
+offset_bottom = 1148.0
+texture_normal = ExtResource("3_alf7g")
+
+[node name="Capa2" type="Sprite2D" parent="."]
+position = Vector2(578, 972)
+scale = Vector2(1.4425, 1.06667)
+texture = ExtResource("1_ilafw")
+
+[node name="clickboton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3rtis")
+volume_db = 24.0
