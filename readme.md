@@ -10,7 +10,7 @@ Proyecto de Creación Multimedia Interactiva de la  Facultad de Bellas Artes de 
 
 **Titulo** : ANIMALITOS
 
-**Web:**   (angelagomuz.io) [No sé si aquí debía ir el enlace del juego aquí subido].
+**Web:**   https://g0mera.itch.io/animalitos
 
 **Autor:**  Ángela Gómez Muñoz
 
